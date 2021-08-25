@@ -1,0 +1,6 @@
+<div class="container">
+  <h3><%= @cocktail.name %> <% @cocktail.stars.times do %>⭐️<% end %></h3>
+  <%= image_tag @cocktail.image_url, alt: @cocktail.name, height: 400 %>
+  <p>Ingredients: <%= @cocktail.ingredients %></p>
+  <p>Recipe: <%= @cocktail.recipe %></p>
+</div>
