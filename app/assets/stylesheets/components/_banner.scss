@@ -1,1 +1,22 @@
-_banner.scss
+.banner_ {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 48px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.top-right {
+  font-size:16px;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
