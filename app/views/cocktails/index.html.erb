@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1551024709-8f23befc6f87)">
-  <p>where you find the best recipes</p>
+  <p>where you find the best drink recipes</p>
 </div>
 
 <div class="container">
@@ -7,9 +7,9 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-4">
-        <!-- <!% link_to cocktail_path do %> -->
+        <%= link_to cocktail_path(cocktail), {:class=>"a_link"} do %>
           <p style="background-image: url(<%= cocktail.image_url %>)"><%= cocktail.name %></p>
-        <!-- <!% end %> -->
+        <% end %>
       </div>
     <% end %>
   </div>

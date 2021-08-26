@@ -1,0 +1,9 @@
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, label: 'Drink' %>
+  <%= f.input :ingredients %>
+  <%= f.input :stars, label: 'Stars (1 to 5)', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :image_url, placeholder: 'http://' %>
+  <%= f.input :recipe %>
+  <%= f.submit class:"btn btn-success rounded-pill btn-sm" %>
+  <%= link_to "Cancel", cocktails_path, {:class=>"btn btn-default"} %>
+<% end %>

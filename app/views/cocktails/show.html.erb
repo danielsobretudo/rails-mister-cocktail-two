@@ -1,6 +1,30 @@
 <div class="container">
-  <h3><%= @cocktail.name %> <% @cocktail.stars.times do %>⭐️<% end %></h3>
-  <%= image_tag @cocktail.image_url, alt: @cocktail.name, height: 400 %>
+  <h3>
+    <% if @cocktail.stars.nil? %>
+      <%= @cocktail.name %>
+    <% else %>
+      <%= @cocktail.name %> <% @cocktail.stars.times do %>⭐️<% end %>
+    <% end %>
+  </h3>
+    <% if @cocktail.image_url == "" %>
+    <p>No available image</p>
+  <% else %>
+    <%= image_tag @cocktail.image_url, alt: @cocktail.name, height: 400 %>
+  <% end %>
   <p>Ingredients: <%= @cocktail.ingredients %></p>
   <p>Recipe: <%= @cocktail.recipe %></p>
+</div>
+
+<div>
+<%= link_to edit_cocktail_path(@cocktail) do %>
+  <i class="fas fa-pencil-alt"></i>
+<% end %>
+
+</div>
+<div>
+<%= link_to cocktail_path(@cocktail),
+             method: :delete,
+             data: { confirm: "Are you sure? This action can't be undone." } do %>
+             <i class="fas fa-trash-alt"></i>
+<% end %>
 </div>
