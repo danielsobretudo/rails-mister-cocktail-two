@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container p-5">
   <h3>
     <% if @cocktail.stars.nil? %>
       <%= @cocktail.name %>
@@ -6,25 +6,45 @@
       <%= @cocktail.name %> <% @cocktail.stars.times do %>⭐️<% end %>
     <% end %>
   </h3>
+
+  <p>
     <% if @cocktail.image_url == "" %>
-    <p>No available image</p>
-  <% else %>
-    <%= image_tag @cocktail.image_url, alt: @cocktail.name, height: 400 %>
-  <% end %>
-  <p>Ingredients: <%= @cocktail.ingredients %></p>
-  <p>Recipe: <%= @cocktail.recipe %></p>
-</div>
+      No available image
+    <% else %>
+      <%= image_tag @cocktail.image_url, alt: @cocktail.name, height: 400 %>
+    <% end %>
+  </p>
 
-<div>
-<%= link_to edit_cocktail_path(@cocktail) do %>
-  <i class="fas fa-pencil-alt"></i>
-<% end %>
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <td>Ingredients:</td>
+      <td><%= @cocktail.ingredients %></td>
+    </tr>
+    <tr>
+      <td>Recipe:</td>
+      <td><%= @cocktail.recipe %></td>
+    </tr>
+  </tbody>
+</table>
 
-</div>
-<div>
-<%= link_to cocktail_path(@cocktail),
-             method: :delete,
-             data: { confirm: "Are you sure? This action can't be undone." } do %>
-             <i class="fas fa-trash-alt"></i>
-<% end %>
+  <span class="btn-dark rounded-pill p-2">
+    <%= link_to cocktails_path do %>
+      <i class="fas fa-chevron-left"></i> Back
+    <% end %>
+  </span>
+
+  <span class="btn-dark rounded-pill p-2">
+    <%= link_to edit_cocktail_path(@cocktail) do %>
+      <i class="fas fa-pencil-alt"></i> Edit
+    <% end %>
+  </span>
+
+  <span class="btn-dark rounded-pill p-2">
+    <%= link_to cocktail_path(@cocktail),
+                method: :delete,
+                data: { confirm: "Are you sure? This action can't be undone." } do %>
+                <i class="fas fa-trash-alt"></i> Delete
+    <% end %>
+  </span>
 </div>

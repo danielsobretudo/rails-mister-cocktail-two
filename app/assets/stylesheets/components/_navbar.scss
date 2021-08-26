@@ -1,20 +1,40 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: #167FFB;
+// }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
 
 .fa-glass-martini {
   font-size: 40px;
+  color: $cherry;
+  &:hover {
+    color: white
+  }
 }
 
 .no_link {
-  text-decoration: none
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+.page_title {
+  text-align: center;
+}
+
+.add_button {
+  text-align: right;
+}
+
+.navbar {
+  background-color: $cherry;
 }
