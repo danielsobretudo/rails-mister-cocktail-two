@@ -5,6 +5,7 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all
   end
 
+
   def show
   end
 
